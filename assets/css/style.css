@@ -1,0 +1,482 @@
+/**
+  *
+  * Ringing Phone
+  * Keyframes
+  * Button Ht call
+  **/ 
+
+/* Ringing Phone
+-------------------------------------------------------------- */
+.ringing_phone i,
+.active_phone i,
+.active_phone2 i {
+  line-height: 50px;
+  font-size: 1.25em;
+}
+
+.active_phone:after {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(-50%) translateY(-50%);
+  border-radius: 50%;
+  padding: 0.5em;
+  animation: activeCall 2s ease-in-out infinite both;
+}
+
+.active_phone2:after {
+  content: '';
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(#e8a, 1), rgba(#def, 0) 80%, rgba(white, .5));
+  z-index: 11;
+  transform: translate3d(0, 0, 0);
+}
+
+.active_phone:before,
+.active_phone2:before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: activeCall2 4s linear infinite both;
+}
+
+.active_phone2 i {
+  z-index: 10;
+  position: relative;
+}
+
+.active_phone2 .cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.wave,
+.wave2 {
+  opacity: .4;
+  position: absolute;
+  top: 25%;
+  left: -15%;
+  background: white;
+  width: 130%;
+  height: 130%;
+  transform-origin: 50% 48%;
+  border-radius: 45%;
+  animation: drift 3000ms infinite linear;
+  opacity: 0.2;
+}
+
+.wave2 {
+  background: none;
+  border-radius: 35%;
+  top: 40%;
+  border: 2px solid white;
+}
+
+.wave2.two {
+  animation: drift 7000ms infinite linear;
+  opacity: 0.1;
+  top: 42%;
+}
+
+.wave2.three {
+  animation: drift 5000ms infinite linear;
+  opacity: 0.05;
+  top: 44%;
+}
+
+.wave.two {
+  animation: drift 7000ms infinite linear;
+  top: 30%;
+  opacity: 0.1;
+}
+
+.wave.three {
+  animation: drift 5000ms infinite linear;
+  opacity: 0.05;
+  top: 35%;
+}
+
+/* Keyframes
+-------------------------------------------------------------- */
+@keyframes drift {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes activeCall {
+  20% {
+    padding: 1em;
+  }
+  25% {
+    padding: 0.5em;
+  }
+  35% {
+    padding: 1.5em;
+  }
+  50% {
+    padding: 1em;
+  }
+  60% {
+    padding: 1.55em;
+  }
+  80% {
+    padding: 0.7em;
+  }
+  100% {
+    padding: 0.5em;
+  }
+}
+
+@keyframes activeCall2 {
+  0% {
+    padding: 0em;
+    background-color: rgba(76, 175, 80, 0);
+  }
+  25% {
+    padding: 1em;
+    background-color: rgba(76, 175, 80, 0.5);
+    transform: translateX(-1em) translateY(-1em);
+  }
+  26%,
+  100% {
+    padding: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes shake {
+  5%,
+  45% {
+    transform: rotate3d(0, 0, 1, -7deg);
+  }
+  10%,
+  40% {
+    transform: rotate3d(0, 0, 1, 7deg);
+  }
+  15%,
+  25%,
+  35% {
+    transform: rotate3d(0, 0, 1, -7deg);
+  }
+  20%,
+  30% {
+    transform: rotate3d(0, 0, 1, 7deg);
+  }
+  51% {
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+  100% {
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+}
+
+@keyframes fadeInOne {
+  45% {
+    opacity: 0
+  }
+  100% {
+    opacity: 1
+  }
+}
+
+@keyframes fadeInTwo {
+  55% {
+    opacity: 0
+  }
+  100% {
+    opacity: 1
+  }
+}
+
+
+
+
+
+@-moz-keyframes quick-alo-circle-anim {
+  0% {
+    -moz-transform:rotate(0) scale(.5) skew(1deg);
+    opacity:.1;
+    -moz-opacity:.1;
+    -webkit-opacity:.1;
+    -o-opacity:.1;
+  }
+  30% {
+    -moz-transform:rotate(0) scale(.7) skew(1deg);
+    opacity:.5;
+    -moz-opacity:.5;
+    -webkit-opacity:.5;
+    -o-opacity:.5;
+  }
+  100% {
+    -moz-transform:rotate(0) scale(1) skew(1deg);
+    opacity:.6;
+    -moz-opacity:.6;
+    -webkit-opacity:.6;
+    -o-opacity:.1;
+  }
+}
+
+@-webkit-keyframes quick-alo-circle-anim {
+  0% {
+    -webkit-transform:rotate(0) scale(.5) skew(1deg);
+    -webkit-opacity:.1;
+  }
+  30% {
+    -webkit-transform:rotate(0) scale(.7) skew(1deg);
+    -webkit-opacity:.5;
+  }
+  100% {
+    -webkit-transform:rotate(0) scale(1) skew(1deg);
+    -webkit-opacity:.1;
+  }
+}
+
+@-o-keyframes quick-alo-circle-anim {
+  0% {
+    -o-transform:rotate(0) kscale(.5) skew(1deg);
+    -o-opacity:.1;
+  }
+  30% {
+    -o-transform:rotate(0) scale(.7) skew(1deg);
+    -o-opacity:.5;
+  }
+  100% {
+    -o-transform:rotate(0) scale(1) skew(1deg);
+    -o-opacity:.1;
+  }
+}
+
+@-moz-keyframes quick-alo-circle-fill-anim {
+  0% {
+    -moz-transform:rotate(0) scale(.7) skew(1deg);
+    opacity:.2;
+  }
+  50% {
+    -moz-transform:rotate(0) -moz-scale(1) skew(1deg);
+    opacity:.2;
+  }
+  100% {
+    -moz-transform:rotate(0) scale(.7) skew(1deg);
+    opacity:.2;
+  }
+}
+
+@-webkit-keyframes quick-alo-circle-fill-anim {
+  0% {
+    -webkit-transform:rotate(0) scale(.7) skew(1deg);
+    opacity:.2;
+  }
+  50% {
+    -webkit-transform:rotate(0) scale(1) skew(1deg);
+    opacity:.2;
+  }
+  100% {
+    -webkit-transform:rotate(0) scale(.7) skew(1deg);
+    opacity:.2;
+  }
+}
+
+@-o-keyframes quick-alo-circle-fill-anim {
+  0% {
+    -o-transform:rotate(0) scale(.7) skew(1deg);
+    opacity:.2;
+  }
+  50% {
+    -o-transform:rotate(0) scale(1) skew(1deg);
+    opacity:.2;
+  }
+  100% {
+    -o-transform:rotate(0) scale(.7) skew(1deg);
+    opacity:.2;
+  }
+}
+
+@-moz-keyframes quick-alo-circle-img-anim {
+  0% {
+    transform:rotate(0) scale(1) skew(1deg);
+  }
+  10% {
+    -moz-transform:rotate(-25deg) scale(1) skew(1deg);
+  }
+  20% {
+    -moz-transform:rotate(25deg) scale(1) skew(1deg);
+  }
+  30% {
+    -moz-transform:rotate(-25deg) scale(1) skew(1deg);
+  }
+  40% {
+    -moz-transform:rotate(25deg) scale(1) skew(1deg);
+  }
+  50% {
+    -moz-transform:rotate(0) scale(1) skew(1deg);
+  }
+  100% {
+    -moz-transform:rotate(0) scale(1) skew(1deg);
+  }
+}
+
+@-webkit-keyframes quick-alo-circle-img-anim {
+  0% {
+    -webkit-transform:rotate(0) scale(1) skew(1deg);
+  }
+  10% {
+    -webkit-transform:rotate(-25deg) scale(1) skew(1deg);
+  }
+  20% {
+    -webkit-transform:rotate(25deg) scale(1) skew(1deg);
+  }
+  30% {
+    -webkit-transform:rotate(-25deg) scale(1) skew(1deg);
+  }
+  40% {
+    -webkit-transform:rotate(25deg) scale(1) skew(1deg);
+  }
+  50% {
+    -webkit-transform:rotate(0) scale(1) skew(1deg);
+  }
+  100% {
+    -webkit-transform:rotate(0) scale(1) skew(1deg);
+  }
+}
+
+@-o-keyframes quick-alo-circle-img-anim {
+  0% {
+    -o-transform:rotate(0) scale(1) skew(1deg);
+  }
+  10% {
+    -o-transform:rotate(-25deg) scale(1) skew(1deg);
+  }
+  20% {
+    -o-transform:rotate(25deg) scale(1) skew(1deg);
+  }
+  30% {
+    -o-transform:rotate(-25deg) scale(1) skew(1deg);
+  }
+  40% {
+    -o-transform:rotate(25deg) scale(1) skew(1deg);
+  }
+  50% {
+    -o-transform:rotate(0) scale(1) skew(1deg);
+  }
+  100% {
+    -o-transform:rotate(0) scale(1) skew(1deg);
+  }
+}
+ 
+/* Button Ht call
+-------------------------------------------------------------- */
+.ht-call-now {
+	position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 160px;
+    height: 160px;
+    border-radius: 100%;
+    text-align: center;
+    z-index: 9999;   
+}
+
+.ringing_phone .ringing_phone_before {
+    width: 160px;
+    height: 160px;
+    top: 20px;
+    left: 20px;
+    position: absolute;
+    background-color: transparent;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    border: 2px solid rgba(30,30,30,0.4);
+    border: 2px solid #bfebfc 9;
+    opacity: .1;
+    -webkit-animation: quick-alo-circle-anim 1.2s infinite ease-in-out;
+    -moz-animation: quick-alo-circle-anim 1.2s infinite ease-in-out;
+    -ms-animation: quick-alo-circle-anim 1.2s infinite ease-in-out;
+    -o-animation: quick-alo-circle-anim 1.2s infinite ease-in-out;
+    animation: quick-alo-circle-anim 1.2s infinite ease-in-out;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    border-color: #00aff2;
+}
+
+.ringing_phone .ringing_phone_after {
+    width: 100px;
+    height: 100px;
+    top: 50px;
+    left: 50px; 
+    position: absolute;
+    background-color: rgba(0,175,242,0.5);
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    border: 2px solid transparent;
+    opacity: .1;
+    -webkit-animation: quick-alo-circle-fill-anim 2.3s infinite ease-in-out;
+    -moz-animation: quick-alo-circle-fill-anim 2.3s infinite ease-in-out;
+    -ms-animation: quick-alo-circle-fill-anim 2.3s infinite ease-in-out;
+    -o-animation: quick-alo-circle-fill-anim 2.3s infinite ease-in-out;
+    animation: quick-alo-circle-fill-anim 2.3s infinite ease-in-out;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+}
+
+.ringing_phone i {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 25px;
+    top: 70px;
+    left: 70px;
+    position: absolute;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    border: 2px solid transparent;
+    background: #00aff2;
+    color: #fff;
+    opacity: 0.7;
+    -webkit-animation: quick-alo-circle-img-anim 1s infinite ease-in-out;
+    -moz-animation: quick-alo-circle-img-anim 1s infinite ease-in-out;
+    -ms-animation: quick-alo-circle-img-anim 1s infinite ease-in-out;
+    -o-animation: quick-alo-circle-img-anim 1s infinite ease-in-out;
+    animation: quick-alo-circle-img-anim 1s infinite ease-in-out;
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+}

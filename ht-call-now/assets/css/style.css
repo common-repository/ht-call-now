@@ -1,0 +1,250 @@
+/**
+  *
+  * Ringing Phone
+  * Keyframes
+  * Button Ht call
+  **/ 
+
+/* Ringing Phone
+-------------------------------------------------------------- */
+.ringing_phone i,
+.active_phone i,
+.active_phone2 i {
+  line-height: 50px;
+  font-size: 1.25em;
+}
+
+.ringing_phone i {
+  animation: shake 2s infinite cubic-bezier(.36, .07, .19, .97) both;
+}
+
+.active_phone:after {
+  position: absolute;
+  content: '';
+  top: 50%;
+  left: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(-50%) translateY(-50%);
+  border-radius: 50%;
+  padding: 0.5em;
+  animation: activeCall 2s ease-in-out infinite both;
+}
+
+.active_phone2:after {
+  content: '';
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(#e8a, 1), rgba(#def, 0) 80%, rgba(white, .5));
+  z-index: 11;
+  transform: translate3d(0, 0, 0);
+}
+
+.active_phone:before,
+.active_phone2:before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: activeCall2 4s linear infinite both;
+}
+
+.ringing_phone:after,
+.ringing_phone:before {
+  position: absolute;
+  content: '';
+  opacity: 0;
+  border-right: 2px solid #ffffff;
+  width: 15px;
+  height: 15px;
+  left: 40%;
+  top: 28%;
+  border-radius: 50%;
+  transform: rotate(-40deg);
+  animation: fadeInOne 2s infinite both;
+}
+
+.ringing_phone:before {
+  width: 20px;
+  height: 20px;
+  left: 40%;
+  top: 20%;
+  animation: fadeInTwo 2s infinite both;
+}
+
+.active_phone2 i {
+  z-index: 10;
+  position: relative;
+}
+
+.active_phone2 .cover {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.wave,
+.wave2 {
+  opacity: .4;
+  position: absolute;
+  top: 25%;
+  left: -15%;
+  background: white;
+  width: 130%;
+  height: 130%;
+  transform-origin: 50% 48%;
+  border-radius: 45%;
+  animation: drift 3000ms infinite linear;
+  opacity: 0.2;
+}
+
+.wave2 {
+  background: none;
+  border-radius: 35%;
+  top: 40%;
+  border: 2px solid white;
+}
+
+.wave2.two {
+  animation: drift 7000ms infinite linear;
+  opacity: 0.1;
+  top: 42%;
+}
+
+.wave2.three {
+  animation: drift 5000ms infinite linear;
+  opacity: 0.05;
+  top: 44%;
+}
+
+.wave.two {
+  animation: drift 7000ms infinite linear;
+  top: 30%;
+  opacity: 0.1;
+}
+
+.wave.three {
+  animation: drift 5000ms infinite linear;
+  opacity: 0.05;
+  top: 35%;
+}
+
+/* Keyframes
+-------------------------------------------------------------- */
+@keyframes drift {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes activeCall {
+  20% {
+    padding: 1em;
+  }
+  25% {
+    padding: 0.5em;
+  }
+  35% {
+    padding: 1.5em;
+  }
+  50% {
+    padding: 1em;
+  }
+  60% {
+    padding: 1.55em;
+  }
+  80% {
+    padding: 0.7em;
+  }
+  100% {
+    padding: 0.5em;
+  }
+}
+
+@keyframes activeCall2 {
+  0% {
+    padding: 0em;
+    background-color: rgba(76, 175, 80, 0);
+  }
+  25% {
+    padding: 1em;
+    background-color: rgba(76, 175, 80, 0.5);
+    transform: translateX(-1em) translateY(-1em);
+  }
+  26%,
+  100% {
+    padding: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes shake {
+  5%,
+  45% {
+    transform: rotate3d(0, 0, 1, -7deg);
+  }
+  10%,
+  40% {
+    transform: rotate3d(0, 0, 1, 7deg);
+  }
+  15%,
+  25%,
+  35% {
+    transform: rotate3d(0, 0, 1, -7deg);
+  }
+  20%,
+  30% {
+    transform: rotate3d(0, 0, 1, 7deg);
+  }
+  51% {
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+  100% {
+    transform: rotate3d(0, 0, 0, 0deg);
+  }
+}
+
+@keyframes fadeInOne {
+  45% {
+    opacity: 0
+  }
+  100% {
+    opacity: 1
+  }
+}
+
+@keyframes fadeInTwo {
+  55% {
+    opacity: 0
+  }
+  100% {
+    opacity: 1
+  }
+}
+ 
+/* Button Ht call
+-------------------------------------------------------------- */
+.ht-call-now {
+	position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 50px;
+    line-height: 50px;
+    height: 50px;
+    border-radius: 100%;
+    text-align: center;
+    z-index: 9999;
+}
